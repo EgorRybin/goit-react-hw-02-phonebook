@@ -4,7 +4,7 @@ import s from './Filter.module.css';
 
 const Filter = ({ handleChange, filter }) => {
   return (
-    <label htmlFor="">
+    <label>
       <span className={s.name}>Filter</span>
       <input
         type="text"
