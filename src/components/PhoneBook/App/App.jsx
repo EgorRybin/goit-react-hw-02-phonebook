@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 
-import Form from './PhoneBook/Form';
-import ContactList from './PhoneBook/ContactList';
-import Filter from './PhoneBook/Filter';
-import s from './PhoneBook/App.module.css';
+import Form from '../Form/Form';
+import ContactList from '../ContactList/ContactList';
+import Filter from '../Filter/Filter';
+import s from '../App/App.module.css';
 
 
 const INIT_STATE = {
@@ -36,11 +36,11 @@ class App extends Component {
     }));
   };
 
-  deleteContact = e => {
+  deleteContact = id => {
     const { contacts } = this.state;
-    const deleteContactFromArr = contacts.filter(el => el.id !== e.target.name);
+    const deleteContactFromArr = contacts.filter(el => el.id !== id);
     this.setState(prev => ({
-      contacts: [...deleteContactFromArr],
+      contacts: deleteContactFromArr,
     }));
   };
 
